@@ -1,8 +1,9 @@
 import LogoUp from "../../../public/logo.png"
 import Name from "../../../public/UpLife.png"
+import * as S from "./styles"
 
 const Logo = () => {
-    return <div>
+    return <S.Imagem>
         {/* <img src={LogoUp} alt="Logo UP Life"></img> */}
         <svg width="124" height="45" viewBox="0 0 124 45" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
         <rect width="50" height="44.7761" fill="url(#pattern0)"/>
@@ -15,7 +16,7 @@ const Logo = () => {
         </defs>
         </svg>
 
-    </div>
+    </S.Imagem>
 };
 
 

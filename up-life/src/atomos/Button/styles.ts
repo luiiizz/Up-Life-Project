@@ -6,6 +6,7 @@ export const Container = styled.button `
     float: right;
     margin-top: 10px;
     color: white;
+    margin-right: 35px;
 
     background: #BB0A1E;
     border-radius: 10px;

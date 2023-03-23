@@ -1,15 +1,13 @@
 import * as S from './styles'
 
-import Logo from '../../molecules/Logo'
-import Button from '../../atomos/Button'
-import Menu from '../Menu'
+import ContAgenda from '../ContAgenda'
+import ImgProfissionais from '../../molecules/ImgProfissionais';
 
 const Apresentacao = () =>{
     return  <S.Box>
-            <Logo></Logo>
-            <Menu></Menu>
-            <Button></Button>
-        </S.Box>;
+        <ContAgenda></ContAgenda>
+        <ImgProfissionais></ImgProfissionais>
+    </S.Box>;
 };
 
 

@@ -4,19 +4,14 @@ import Frontend from '../templates/Frontend';
 import * as S from './styles';
 
 import Header from '../organisms/Header';
-import Apresentacao from '../organisms/Apresentacao';
 import SaibaMais from '../organisms/SaibaMais';
+import Apresentacao from '../organisms/Apresentacao';
 
 function Main() {
 
   return (<Frontend> 
-    
-    <S.Container>
-      <Header></Header>
-      <Apresentacao></Apresentacao>
-      {/* <SaibaMais></SaibaMais> */}
-    </S.Container>
-
+    <Header></Header>
+    <Apresentacao></Apresentacao>
   </Frontend>
   )
   

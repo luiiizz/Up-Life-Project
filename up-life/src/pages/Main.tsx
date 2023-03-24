@@ -12,6 +12,7 @@ function Main() {
   return (<Frontend> 
     <Header></Header>
     <Apresentacao></Apresentacao>
+    <SaibaMais></SaibaMais>
   </Frontend>
   )
   

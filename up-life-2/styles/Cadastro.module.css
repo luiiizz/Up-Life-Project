@@ -63,3 +63,10 @@
     font-size: 18px;
     background-color: #BB0A1E  !important;
 }
+
+.sucesso{
+    font-size: 18px;
+    color: green;
+    font-weight: 700;
+    margin-bottom: 15px;
+}

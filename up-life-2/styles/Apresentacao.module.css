@@ -1,0 +1,57 @@
+.Apresentacao{
+   display: flex;
+   flex-direction: row;
+   margin-top: 50px;
+   background: #BB0A1E;
+   height: auto;
+}
+
+.Apresentacao .Container_Agenda{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 50vw;
+    height: 100%;
+}
+
+.Apresentacao .Container_Agenda p{  
+    margin-top: 15px;
+    font-family: 'Lato';
+    color: white;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    max-width: 60%;
+    padding-top: 20px;
+}
+
+.Apresentacao .Container_Agenda button {
+    margin-top: 20px;
+    color: rgba(187, 10, 30, 1);
+    font-size: 20px;
+    font-weight: 700px;
+    width: 150px;
+    height: 70px;
+    left: 290px;
+    cursor: pointer;
+    margin-bottom: 20px;
+
+    background: #FFFFFF;
+    border-radius: 15px;
+}
+
+
+.Apresentacao .Profissionais{
+    height: 100%;
+    width: 330px;
+}
+
+
+.Apresentacao .ImgProf{
+    height: 315px; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

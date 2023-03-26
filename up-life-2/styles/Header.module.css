@@ -1,0 +1,62 @@
+.Header{
+    padding-top: 30px;
+    height: 42px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.Header .Logo{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+    .Logo label{
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 25px;
+        color: #BB0A1E;
+    }
+
+
+
+.Header .MenuList{
+    margin-top: 5px;
+    margin-left: auto;
+}
+
+
+.Header .ItemList{
+    display: inline-block;
+    margin-right: 25px;
+    font-weight: 500;
+}
+
+
+.Header .ItemList a{
+    color: #BB0A1E;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+
+.Header  .Botao{
+    width: 80px;
+    height: 33px;
+    float: right;
+    /* margin-bottom: 50px; */
+    color: white;
+    margin-right: 35px;
+
+    background: #BB0A1E;
+    border-radius: 10px;
+
+    font-style: normal;
+    font-weight: 200;
+    font-size: 0.9rem;
+    line-height: 19px;
+    text-align: center;
+}

@@ -1,0 +1,65 @@
+.Cadastro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background: #BB0A1E;
+}
+
+
+.Topo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.Topo img{
+    cursor: pointer;
+}
+
+.Topo div {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Topo h3{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    color: #BB0A1E;
+}
+
+#card_cadastro{
+    display: flex;
+    align-items: center;
+    width: 45%;
+}
+
+
+.form_cadastro{
+    width: 70%;
+}
+
+.form_cadastro label{
+    color: #BB0A1E !important;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.form_cadastro input{
+    border: 1px solid #BB0A1E
+}
+
+
+.form_cadastro button{
+    margin-left: 37%;
+    margin-bottom: 30px;
+    width: 30%;
+    height: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    background-color: #BB0A1E  !important;
+}

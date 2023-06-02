@@ -6,7 +6,6 @@ Orientador: Eduardo Souza*/
 
 'use client';
 import Head from 'next/head';
-import Link from 'next/link';
 
 import Topo from './componentes/Topo';
 import Form from './componentes/Form';

@@ -5,9 +5,7 @@ Data: 20/03/2023
 Orientador: Eduardo Souza*/
 
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
 import Principal from './Principal'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -26,15 +24,6 @@ export default function Home() {
 
 
       <Principal></Principal>
-
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
            
     </>
   )

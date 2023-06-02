@@ -37,7 +37,7 @@ const Header = () =>{
             </ul>
             
 
-           <Link href='/Cadastro'><button type='button' className={style.Botao}>ENTRAR</button></Link>
+           <Link href='/Login'><button type='button' className={style.Botao}>ENTRAR</button></Link>
 
             
         </div>

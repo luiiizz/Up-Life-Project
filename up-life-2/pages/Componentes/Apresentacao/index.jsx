@@ -13,7 +13,7 @@ const Apresentacao = () =>{
                     Caso não encontre vaga, pedimos que tente mais tarde ou contate a Unidade da Hemominas em que deseja comparecer.
                 </p>
 
-                <Link href='/Cadastro'><button type="button">Agendar Doação</button></Link>
+                <Link href='/Login'><button type="button">Agendar Doação</button></Link>
             </div>
 
             <div className={style.ImgProf}>

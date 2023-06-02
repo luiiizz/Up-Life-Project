@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import style from '../../../../styles/Cadastro.module.css';
 
 export default function Form (){
@@ -66,11 +67,15 @@ export default function Form (){
                     <label for="exampleInputPassword1" class="form-label">Confirmar senha</label>
                     <input type="password" class="form-control" required value={formData.password2} onChange={(e) => {handleFormEdit(e,'password2')}}/>
                 </div>
-
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
                 
-                <div className={style.mensagem}>
-                    {error && <p style={{ color: error.includes('sucesso') ? 'green' : 'red' }}>{error.replace('.', '! ')}</p> }
+                <div class="d-flex flex-column align-items-center">
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    
+                    <div className={style.mensagem}>
+                        {error && <p style={{ color: error.includes('sucesso') ? 'green' : 'red' }}>{error.replace('.', '! ')}</p> }
+                    </div>
+
+                    <p className={style.cadastrase}> Já possui conta? <Link href='/Login'> Login</Link></p>
                 </div>
             </form>
 

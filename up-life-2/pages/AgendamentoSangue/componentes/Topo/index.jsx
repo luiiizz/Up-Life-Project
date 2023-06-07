@@ -8,7 +8,7 @@ export default function Topo (){
         <>  
 
             <div className={style.Topo}>
-               <Link href="/"> <Image src="/back.png"
+               <Link href="/AgendamentoSangue"> <Image src="/back.png"
                     width={60}
                     height={60}/>
                 </Link>

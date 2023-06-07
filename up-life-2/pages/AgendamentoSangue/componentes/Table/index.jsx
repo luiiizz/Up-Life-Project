@@ -63,7 +63,7 @@ const Table = () =>{
                             {donations.map((donation) => (
                                 <tr key={donation.id}>
                                     <td>{donation.id}</td>
-                                    <td>{donation.expiry_date}</td>
+                                    <td>{donation.validation_date}</td>
                                     <td>{donation.blood_type}</td>
                                     <td>Simples 470 ml</td>
                                     <td>Onco-Hematológico</td>

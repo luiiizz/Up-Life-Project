@@ -13,7 +13,7 @@ const Table = () =>{
                         <thead>
                             <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Requsito</th>
+                            <th scope="col">Requisitos</th>
                             </tr>
                         </thead>
                         <tbody>

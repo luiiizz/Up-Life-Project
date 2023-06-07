@@ -29,30 +29,34 @@ export default function Form (){
                 Authorization: `Basic ${authHeader}`,
               };
 
-            console.log(password);
             const response = await fetch(`http://localhost:8000/api/auth/login`,{
                 method: 'POST',
                 headers: headers,
             })
             const json = await response.json();
-            /*
-            const data = response.data;
 
-            console.log('Data:', data);
-            console.log('Token:', data.token);
-  
-            // Armazena o token retornado em um cookie
-            Cookies.set('token', data.token);
+            if(json.token){
+                console.log(json.token);
+                console.log(json.user.email);
     
-            // Define o token no estado para uso posterior
-            setToken(data.token);*/
+                // Armazena o token retornado em um cookie
+                Cookies.set('token', json.token);
+                Cookies.set('usuario', json.user.email);
+        
+                // Define o token no estado para uso posterior
+                setToken(json.token);
+                setToken(json.user.email);
+            }else{
+                throw new Error('Usuário inválido!');
+            }
             
             console.log(json);
             if(response.status !== 200){
                 const errorMessages = Object.keys(json).map(key => `${key}: ${json[key]}`);
                 throw new Error(errorMessages.join('\n'));
             }else{
-                setError('Usuário cadastrado com sucesso');
+                setError('Acessando...');
+                self.location = '/AgendamentoSangue'
             }
        }catch (err){
             setError(err.message);
@@ -76,7 +80,7 @@ export default function Form (){
                     <button type="submit" class="btn btn-primary">Entrar</button>
                     
                     <div className={style.mensagem}>
-                        {error && <p class="mt-5" style={{ color: error.includes('sucesso') ? 'green' : 'red' }}>{error.replace('.', '! ')}</p> }
+                        {error && <p class="mt-5" style={{ color: error.includes('Acessando') ? 'green' : 'red' }}>{error}</p> }
                     </div>
 
                     <p className={style.cadastrase}> Não possui conta? <Link href='/Cadastro'> Cadastra-se</Link></p>

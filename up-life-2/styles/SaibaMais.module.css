@@ -25,10 +25,10 @@
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:space-around;
     text-align: center;
-    width: 220px;
-    height: 300px;
+    width: 260px;
+    height: 370px;
     background: white;
     border-radius:15px;
     color: #BB0A1E;
@@ -49,12 +49,13 @@
     font-size: 13px;
     line-height: 19px;
     padding: 5%;
+    text-align: justify;
 }
 
 .SaibaMais button {
     width: 100px;
-    align-self:flex-end;
-    margin-right: 10px;
+    align-self:center;
+    margin-bottom: 10px;
 }
 
 .SaibaMais .Ellipse{

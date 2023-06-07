@@ -1,0 +1,30 @@
+.HeaderDoador{
+    padding-top: 30px;
+    height: 42px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.HeaderDoador .Logo{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+    .Logo label{
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 25px;
+        color: #BB0A1E;
+    }
+ 
+
+.HeaderDoador .titulo{
+    color: #BB0A1E;
+}
+
+
+

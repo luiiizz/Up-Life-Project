@@ -72,7 +72,7 @@ export default function Form (){
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
                     
                     <div className={style.mensagem}>
-                        {error && <p style={{ color: error.includes('sucesso') ? 'green' : 'red' }}>{error.replace('.', '! ')}</p> }
+                        {error && <p style={{ color: error.includes('sucesso') ? 'green' : 'red' }}>{error.replace(/\./g, '!').replace(/\,/g,' ')}</p> }
                     </div>
 
                     <p className={style.cadastrase}> Já possui conta? <Link href='/Login'> Login</Link></p>

@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import style from '../../../../styles/Login.module.css';
 import Cookies from 'js-cookie';
 
 export default function Form (){
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [token, setToken] = useState('');
@@ -35,19 +36,42 @@ export default function Form (){
             })
             const json = await response.json();
 
+            console.log(json);
+
             if(json.token){
                 console.log(json.token);
                 console.log(json.user.email);
     
                 // Armazena o token retornado em um cookie
                 Cookies.set('token', json.token);
-                Cookies.set('usuario', json.user.email);
+
+                 // Abre uma nova requisição para obter o ID do usuário
+                const userResponse = await fetch(`http://localhost:8000/api/auth/user`, {
+                    method: 'GET',
+                    headers: {
+                    Authorization: `Token ${json.token}`,
+                    },
+                });
+
+                const userJson = await userResponse.json();
+
+                if (userJson.id) {
+                    Cookies.set('idUser', userJson.id);
+                    Cookies.set('email', userJson.email);
+                    Cookies.set('name', userJson.name);
+                } else {
+                    throw new Error('ID do usuário não encontrado!');
+                }
         
                 // Define o token no estado para uso posterior
                 setToken(json.token);
                 setToken(json.user.email);
-            }else{
-                throw new Error('Usuário inválido!');
+            }else{ 
+                if(json.error){
+                    throw new Error('Usuário inválido! '+json.error);
+                }else{
+                    throw new Error('Usuário inválido!');
+                }
             }
             
             console.log(json);
@@ -62,6 +86,7 @@ export default function Form (){
             setError(err.message);
         }
     }
+
     return (
         <>
             <form onSubmit={handleForm} name="login" className={style.form_cadastro}>

@@ -15,7 +15,9 @@ const HeaderDoador = ({ title, button }) =>{
         <div className={style.HeaderDoador}>
 
             <div className={style.Logo}>
-                <Image src={Logo} alt="Logo"/> <label>UpLife</label>
+                <Link href="/">
+                    <Image src={Logo} alt="Logo"/> <label>UpLife</label>
+                </Link>
             </div>
             
             <div className={style.titulo}>

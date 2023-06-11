@@ -40,6 +40,7 @@ export default function Form (){
                 throw new Error(errorMessages.join('\n'));
             }else{
                 setError('Usuário cadastrado com sucesso');
+                self.location = '/Login';
             }
        }catch (err){
             setError(err.message);

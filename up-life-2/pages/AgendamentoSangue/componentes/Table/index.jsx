@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import axios from 'axios';
 import Cookies from 'js-cookie';
+import moment from 'moment';
+import 'moment/locale/pt-br';
 import style from '../../../../styles/AgendamentoSangue.module.css';
+import Lixeira from '../../../../public/lixeira.png';
+
 
 const Table = () =>{
 
@@ -11,11 +17,13 @@ const Table = () =>{
           const fetchData = async () => {
             try {
               const token = Cookies.get('token'); // Obter o valor do token do cookie
+              const idUser = Cookies.get('idUser');
+
               if (!token) {
                 throw new Error('Token não encontrado no cookie');
               }
       
-              const response = await fetch('http://localhost:8000/api/donations/blood-donation', {
+              const response = await fetch(`http://localhost:8000/api/donations/donation-appointment/donor/${idUser}`, {
                 headers: {
                   'Authorization': `Token ${token}`, // Adicionar o token ao cabeçalho de autorização
                 },
@@ -28,7 +36,7 @@ const Table = () =>{
               const data = await response.json();
               setDonations(data);
 
-              console.log('data');
+              console.log(data);
             } catch (error) {
               console.error('Erro ao fazer a requisição:', error);
             }
@@ -40,8 +48,30 @@ const Table = () =>{
         return donations
     };
 
-    const donations = DonationList()
-      
+    const donations = DonationList();
+
+
+    const handleDelete = (id) => {
+      const confirmed = window.confirm('Tem certeza de que deseja excluir este registro?');
+      const token = Cookies.get('token');
+
+      if (confirmed) {
+        axios.delete(`http://localhost:8000/api/donations/donation-appointment/${id}/`, {
+          headers: {
+            'Authorization': `Token ${token}`
+          }
+        })
+          .then(() => {
+            alert('Excluído com sucesso!');
+            self.location = '/AgendamentoSangue'
+            // Faça qualquer ação adicional após a exclusão, como recarregar os dados ou atualizar a interface.
+          })
+          .catch((error) => {
+            alert('Ocorreu um erro ao excluir o registro.');
+            console.error(error);
+          });
+      }
+    };
 
     return  (
         <div className={style.Table}>
@@ -54,19 +84,21 @@ const Table = () =>{
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Data</th>
-                                <th scope="col">Tipo de Sangue</th>
-                                <th scope="col">Bolsa</th>
+                                <th scope="col">Horario</th>
                                 <th scope="col">Instituição</th>
+                                <th scope="col">Doador</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
                             {donations.map((donation) => (
                                 <tr key={donation.id}>
                                     <td>{donation.id}</td>
-                                    <td>{donation.validation_date}</td>
-                                    <td>{donation.blood_type}</td>
-                                    <td>Simples 470 ml</td>
-                                    <td>Onco-Hematológico</td>
+                                    <td>{moment(donation.scheduled_date, 'DD/MM/YYYY HH:mm:ss').format('L')}</td>
+                                    <td>{moment(donation.scheduled_date, 'DD/MM/YYYY HH:mm:ss').format('LT')}</td>
+                                    <td>Instituto Onco-Hematológico de Anápolis</td>
+                                    <td>{Cookies.get('name')}</td>
+                                    <td><Image className={style.lixeira} src={Lixeira} height={30} onClick={() => handleDelete(donation.id)}></Image></td>
                                 </tr>
                             ))}
                                 

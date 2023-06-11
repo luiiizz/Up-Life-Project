@@ -15,7 +15,9 @@ const Header = () =>{
         <div className={style.Header}>
 
             <div className={style.Logo}>
-                <Image src={Logo} alt="Logo"/> <label>UpLife</label>
+                <Link href="/">
+                    <Image src={Logo} alt="Logo"/> <label>UpLife</label>
+                </Link>
             </div>
             
             <ul className={style.MenuList}>

@@ -30,10 +30,10 @@ const Header = () =>{
                    <Link href="/ComoDoar"> <a href="#">Como doar</a></Link>
                     </li>
                 <li className={style.ItemList} onClick={EmDes}>
-                    <a href="#">Hemocentros</a>
+                    <a href="#">Hemocentro</a>
                     </li>
                 <li className={style.ItemList} onClick={EmDes}>
-                    <a href="#">Medicamentos</a>
+                    <a href="#">Campanhas</a>
                     </li>
                 
             </ul>

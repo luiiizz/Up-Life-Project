@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import moment from 'moment';
 import 'moment/locale/pt-br';
 import style from '../../../../styles/AgendamentoSangue.module.css';
-import Lixeira from '../../../../public/lixeira.png';
-
+import Excluir from '../../../../public/excluir.png';
+import Editar from '../../../../public/editar.png';
 
 const Table = () =>{
 
@@ -73,6 +74,12 @@ const Table = () =>{
       }
     };
 
+    const router = useRouter();
+
+    const handleEdit = (id) => {
+      router.push(`/AgendamentoSangue/editarAgendamento/${id}`);
+    };
+
     return  (
         <div className={style.Table}>
             
@@ -88,6 +95,7 @@ const Table = () =>{
                                 <th scope="col">Instituição</th>
                                 <th scope="col">Doador</th>
                                 <th scope="col"></th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -98,7 +106,8 @@ const Table = () =>{
                                     <td>{moment(donation.scheduled_date, 'DD/MM/YYYY HH:mm:ss').format('LT')}</td>
                                     <td>Instituto Onco-Hematológico de Anápolis</td>
                                     <td>{Cookies.get('name')}</td>
-                                    <td><Image className={style.lixeira} src={Lixeira} height={30} onClick={() => handleDelete(donation.id)}></Image></td>
+                                    <td><Image className={style.lixeira} src={Editar} height={27} onClick={() => handleEdit(donation.id)}/></td>
+                                    <td><Image className={style.lixeira} src={Excluir} height={27} onClick={() => handleDelete(donation.id)}></Image></td>
                                 </tr>
                             ))}
                                 

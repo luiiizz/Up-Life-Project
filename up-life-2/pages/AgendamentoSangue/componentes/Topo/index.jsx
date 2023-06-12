@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import style from '../../../../styles/AgendamentoSangue.module.css';
 
-export default function Topo (){
+export default function Topo ({children}){
     return (
         <>  
 
@@ -17,7 +17,7 @@ export default function Topo (){
                     <Image src="/logo2.png"
                     width={120}
                     height={120}/>
-                    <h3>Agendar Doação</h3>
+                    <h3>{children}</h3>
                     <p> <Image class="m-2" src="/schedule.png"
                     width={30}
                     height={30}/>Horários disponiveis para doação: Segunda à sexta das 08h às 15h</p>

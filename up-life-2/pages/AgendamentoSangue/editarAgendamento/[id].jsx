@@ -7,10 +7,10 @@ Orientador: Eduardo Souza*/
 'use client';
 import Head from 'next/head';
 
-import Topo from './componentes/Topo';
-import Form from './componentes/Form';
+import Topo from '../componentes/Topo';
+import FormEditar from '../componentes/FormEditar';
 
-import style from '../../styles/AgendamentoSangue.module.css';
+import style from '../../../styles/AgendamentoSangue.module.css';
 
 function AgendamentoSangue() {
 
@@ -30,8 +30,8 @@ function AgendamentoSangue() {
       
 
       <div class='card mt-3' id={style.card_cadastro}>
-        <Topo>Agendar Doação</Topo>
-        <Form/>
+        <Topo>Editar Doação</Topo>
+        <FormEditar/>
       </div>
 
     </div>

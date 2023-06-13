@@ -6,7 +6,9 @@ Orientador: Eduardo Souza*/
 
 'use client';
 import Head from 'next/head';
+import Link from 'next/link';
 
+import HeaderDoador from '../Componentes/HeaderDoador';
 import Topo from './componentes/Topo';
 import Form from './componentes/Form';
 
@@ -28,8 +30,11 @@ function AgendamentoSangue() {
       </Head>
 
       
+      <HeaderDoador 
+        button={ <Link href='/'><button type='button' className={style.botaoNova}>Sair</button></Link>}
+      />
 
-      <div class='card mt-3' id={style.card_cadastro}>
+      <div class='card mt-4' id={style.card_cadastro}>
         <Topo>Agendar Doação</Topo>
         <Form/>
       </div>

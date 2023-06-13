@@ -28,10 +28,12 @@ function AgendamentoSangue() {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
       </Head>
 
-      <HeaderDoador
+   
+      <HeaderDoador 
         title={<h4 className={style.titulo}>Minhas Doações de Sangue</h4>}
-        button={ <Link href='/AgendamentoSangue/novoAgendamento'><button type='button' className={style.botaoNova}>Nova doação</button></Link>}
+        button={ <Link href='/'><button type='button' className={style.botaoNova}>Sair</button></Link>}
       />
+    
 
       <Table/>
 

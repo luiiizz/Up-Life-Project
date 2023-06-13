@@ -1,16 +1,23 @@
 .Header{
     padding-top: 30px;
-    height: 42px;
+    height: 80px !important;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    background-color: white;
 }
 
+.Header .link{
+    display: flex;
+    align-items: center;
+    text-decoration: none !important;
+}
 
 .Header .Logo{
     display: flex;
     align-items: center;
-    margin-top: 15px;
 }
 
     .Logo label{
@@ -25,8 +32,11 @@
 
 
 .Header .MenuList{
-    margin-top: 5px;
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 0;
 }
 
 

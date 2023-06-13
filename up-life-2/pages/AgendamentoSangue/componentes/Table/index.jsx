@@ -83,7 +83,7 @@ const Table = () =>{
     return  (
         <div className={style.Table}>
             
-            <div className="card">
+            <div className="card mt-4">
                 <div className="card-body">
 
                     <table class="table">

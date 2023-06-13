@@ -6,7 +6,9 @@ Orientador: Eduardo Souza*/
 
 'use client';
 import Head from 'next/head';
+import Link from 'next/link';
 
+import HeaderDoador from '@/pages/Componentes/HeaderDoador';
 import Topo from '../componentes/Topo';
 import FormEditar from '../componentes/FormEditar';
 
@@ -27,9 +29,11 @@ function AgendamentoSangue() {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
       </Head>
 
-      
+      <HeaderDoador 
+        button={ <Link href='/'><button type='button' className={style.botaoNova}>Sair</button></Link>}
+      />
 
-      <div class='card mt-3' id={style.card_cadastro}>
+      <div class='card mt-4' id={style.card_cadastro}>
         <Topo>Editar Doação</Topo>
         <FormEditar/>
       </div>

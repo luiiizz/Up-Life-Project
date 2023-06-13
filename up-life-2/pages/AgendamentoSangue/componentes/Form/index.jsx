@@ -19,7 +19,8 @@ export default function Form (){
     console.log(formData);
 
     const [error, setMsg] = useState('');
-    const usuario = Cookies.get('usuario');
+    const usuario = Cookies.get('name');
+    console.log(usuario);
 
     // Variaveis não coletadas do formulario 
     const idUser = Cookies.get('idUser');

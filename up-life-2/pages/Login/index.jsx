@@ -6,6 +6,8 @@ Orientador: Eduardo Souza*/
 
 'use client';
 import Head from 'next/head';
+import Cookies from 'js-cookie';
+import { useRouter } from 'next/router';
 
 import Topo from './componentes/Topo';
 import Form from './componentes/Form';
@@ -13,6 +15,14 @@ import Form from './componentes/Form';
 import style from '../../styles/Login.module.css';
 
 function Login() {
+  const router = useRouter();
+
+  const token = Cookies.get('token');
+  console.log(token);
+
+  if(token && token !== '') {
+      router.push('/AgendamentoSangue');
+  }
 
   return (
     <div className={style.Login}>

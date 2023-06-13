@@ -15,7 +15,7 @@ const Header = () =>{
         <div className={style.Header}>
 
             <div className={style.Logo}>
-                <Link href="/">
+                <Link href="/" className={style.link}>
                     <Image src={Logo} alt="Logo"/> <label>UpLife</label>
                 </Link>
             </div>
@@ -23,23 +23,25 @@ const Header = () =>{
             <ul className={style.MenuList}>
                 
                 <li className={style.ItemList}>
-                    <Link href="/"> <a href="#">Ínicio</a></Link>
+                    <Link href="/">Ínicio</Link>
                         </li>
 
                 <li className={style.ItemList}>
-                   <Link href="/ComoDoar"> <a href="#">Como doar</a></Link>
+                   <Link href="/ComoDoar">Como doar</Link>
                     </li>
+                    
                 <li className={style.ItemList} onClick={EmDes}>
-                    <a href="#">Hemocentro</a>
+                    <Link href="/">Hemocentro</Link>
                     </li>
+
                 <li className={style.ItemList} onClick={EmDes}>
-                    <a href="#">Campanhas</a>
+                    <Link href="/">Campanhas</Link>
                     </li>
                 
             </ul>
             
 
-           <Link href='/Login'><button type='button' className={style.Botao}>ENTRAR</button></Link>
+           <Link href='/Login'><button type='button' className={style.Botao}>Entrar</button></Link>
 
             
         </div>

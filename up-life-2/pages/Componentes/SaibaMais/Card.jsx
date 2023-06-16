@@ -1,15 +1,14 @@
 import style from '../../../styles/SaibaMais.module.css';
 
-const Card = ({children}) => {
-    function EmDes(){
-        alert("Em desenvolvimento!!");
-    }
+const Card = ({children, verMais}) => {
+    
     return (
         <div className={style.Card2}>
             
             {children}
 
-            <button className="btn btn-danger ver-mais" type="button" onClick={EmDes}>Ver mais</button>
+            {verMais}
+
         </div>
     )
 }

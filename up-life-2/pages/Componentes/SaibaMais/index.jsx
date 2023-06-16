@@ -7,14 +7,22 @@ import Ellipse2 from '../../../public/saibaMais/Ellipse2.png';
 import Ellipse3 from '../../../public/saibaMais/Ellipse3.png';
 import Ellipse4 from '../../../public/saibaMais/Ellipse4.png';
 import Ellipse5 from '../../../public/saibaMais/Ellipse5.png';
+import Link from 'next/link';
 
 const SaibaMais = () => {
+
+    function EmDes(){
+        alert("Em desenvolvimento!!");
+    }
+
     return (
         <div className={style.SaibaMais}>
             <h2>Saiba Mais</h2>
             
             <div>
-                <Card>
+                <Card 
+                    verMais={<button className="btn btn-danger ver-mais" type="button" onClick={EmDes}>Ver mais</button>}
+                >
                     <Image className={style.Ellipse} src={Ellipse1} alt=""/>
                     <label>Perguntas frequentes</label>
                     <p>
@@ -23,7 +31,9 @@ const SaibaMais = () => {
                     </p>
                 </Card>
 
-                <Card>
+                <Card
+                    verMais={<button className="btn btn-danger ver-mais" type="button" onClick={EmDes}>Ver mais</button>}
+                >
                     <Image className={style.Ellipse} src={Ellipse2} alt=""/>
                     <label>Doação Urgente</label>
                     <p>
@@ -32,7 +42,9 @@ const SaibaMais = () => {
                     </p>
                 </Card>
                 
-                <Card>
+                <Card
+                    verMais={<Link href='/ComoDoar'><button class="btn btn-danger ver-mais" type="button">Ver mais</button></Link>}
+                >
                     <Image className={style.Ellipse} src={Ellipse3} alt=""/>
                     <label>Como doar sangue</label>
                     <p>
@@ -41,7 +53,9 @@ const SaibaMais = () => {
                     </p>
                 </Card>
 
-                <Card>
+                <Card
+                    verMais={<button className="btn btn-danger ver-mais" type="button" onClick={EmDes}>Ver mais</button>}
+                >
                     <Image className={style.Ellipse} src={Ellipse4} alt=""/>
                     <label>Assistente Virtual</label>
                     <p>
@@ -51,7 +65,9 @@ const SaibaMais = () => {
                     </p>
                 </Card>  
 
-                <Card>
+                <Card
+                    verMais={<button className="btn btn-danger ver-mais" type="button" onClick={EmDes}>Ver mais</button>}
+                >
                     <Image className={style.Ellipse} src={Ellipse5} alt=""/>
                     <label>Pré-triagem </label>
                     <p>
